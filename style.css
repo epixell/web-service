@@ -12,6 +12,17 @@
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --container-bg: #2c2c2c;
+    --primary-color: #58a6ff;
+    --primary-hover: #79b8ff;
+    --text-color: #f0f0f0;
+    --number-bg: #3a3a3a;
+    --number-color: #f0f0f0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
@@ -21,6 +32,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -29,11 +41,53 @@ body {
     border-radius: 16px;
     box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s;
+    position: relative;
 }
 
 .container:hover {
     transform: translateY(-5px);
+}
+
+.theme-switch {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+#theme-toggle + label {
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle + label::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+#theme-toggle:checked + label {
+    background-color: var(--primary-color);
+}
+
+#theme-toggle:checked + label::after {
+    transform: translateX(24px);
 }
 
 h1 {
@@ -43,23 +97,20 @@ h1 {
     font-weight: 600;
 }
 
-.lotto-numbers {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.number {
-    background-color: var(--number-bg);
-    color: var(--number-color);
-    width: 50px;
-    height: 50px;
+.menu-display {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    margin: 2rem 0;
+    min-height: 70px;
+}
+
+.menu {
+    background-color: var(--number-bg);
+    color: var(--number-color);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 2rem;
     font-weight: 600;
     transition: all 0.3s ease;
 }
