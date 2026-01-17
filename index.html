@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     
     <!-- Clarity tag -->
@@ -23,7 +23,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epixell</title>
+    <title>Epixell - 점심메뉴 추천 및 타로 운세</title>
+    <meta name="description" content="Epixell에서 점심 메뉴를 추천받고 오늘의 타로 운세를 확인해보세요. 매일 새로운 영감을 얻으세요.">
+    <meta name="keywords" content="점심메뉴, 타로, 운세, 추천, Epixell">
+    <meta property="og:title" content="Epixell - 점심메뉴 추천 및 타로 운세">
+    <meta property="og:description" content="Epixell에서 점심 메뉴를 추천받고 오늘의 타로 운세를 확인해보세요.">
+    <meta property="og:image" content="https://web-service-byc.pages.dev/favicon.svg">
+    <meta property="og:url" content="https://web-service-byc.pages.dev">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -41,11 +47,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M20.49 9A9 9 0 0 0 7.54 20.49"></path><path d="M3.51 15A9 9 0 0 1 16.46 3.51"></path></svg>
             오늘 뭐 먹지?
         </button>
-    </main>
-    <main class="container">
-        <h1>타로 운세</h1>
+        
+        <h2 class="section-title">타로 운세</h2>
         <div id="tarot-display">
-            <img id="tarot-card-img" src="" alt="Tarot Card">
+            <img id="tarot-card-img" src="" alt="오늘의 타로 운세 카드">
             <h2 id="tarot-card-name"></h2>
             <p id="tarot-card-meaning"></p>
         </div>
